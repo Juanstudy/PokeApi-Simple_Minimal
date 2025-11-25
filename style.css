@@ -3,23 +3,57 @@ body{
     margin: 0;
     box-sizing: border-box;
     background-color: rgb(110, 216, 180);
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-ul img{
-    height: 240px;
+.imagenes_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.imagenes_container .pokemon{
+    position: relative;
+    margin-right: -25px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.imagenes_container .pokemon img{
+    height: 200px;
     transition: all 0.3s ease-in;
 }
 
-.container img:hover{
-    height: 300px;
-   
+.imagenes_container .pokemon img:hover{
+    height: 250px;
 }
-ul{
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    flex-wrap: wrap;
+
+.imagenes_container .pokemon .nombre_pokemon{
+    border: 4px solid white;
+    background-color: white;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: larger;
+    display: none;
+    min-width: 100px;
+    width: 150;
+    top: -50px;
+    right: 20px;
+    position: absolute;
+}
+
+ .imagenes_container .pokemon img:hover + .nombre_pokemon {
+    display: inline-block
+}
+
+.imagenes_container .pokemon .nombre_pokemon:before{
+    background-color: blue;
+}
+
+@media (max-width: 900px){
+    .imagenes_container{
+        flex-direction: column;
+        height: 135vh;
+    }
 }
